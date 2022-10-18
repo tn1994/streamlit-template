@@ -1,7 +1,7 @@
-import sys
 import pip
 import json
 import logging
+import platform
 import subprocess
 
 from .utils.re_util import get_only_version
@@ -13,7 +13,7 @@ class VersionService:
 
     @staticmethod
     def get_python_version():
-        return get_only_version(text=sys.version)
+        return platform.python_version()
 
     @staticmethod
     def get_pip_version():
